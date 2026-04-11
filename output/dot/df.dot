@@ -1,0 +1,21 @@
+digraph CFGraph {
+  graph [rankdir=TB splines=true bgcolor="#1E1B2E"];
+  node  [fontname="Courier", style="filled", fontsize=16, margin=0.3, color="#b87ee2", fillcolor="#B967FF", fontcolor="#4E2859"];
+  edge  [arrowhead=normal, penwidth=2, arrowsize=0.5, color="#c6acff"];
+  0 [label="START", fillcolor="#01CDFE", shape=oval];
+  3565 [label="STOP",  fillcolor="#FF71CE", shape=oval];
+
+  5;
+  4;
+  3565;
+  3;
+  2;
+  1;
+  0;
+  1 -> 1;
+  2 -> 4;
+  4 -> 1;
+  4 -> 5;
+  3 -> 4;
+  3 -> 5;
+}
