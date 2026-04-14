@@ -1,3 +1,15 @@
-dot -Tpng output/dot/cfg.dot -o output/png/cfg.png
-dot -Tpng output/dot/dom.dot -o output/png/dom.png
-dot -Tpng output/dot/df.dot -o output/png/df.png
+#!/bin/bash
+set -e
+
+
+DOT_DIR="output/dot"
+PNG_DIR="output/png"
+
+mkdir -p "$PNG_DIR"
+
+for dot_file in "$DOT_DIR"/*.dot; do
+    [ -f "$dot_file" ] || continue
+    name=$(basename "$dot_file" .dot)
+    dot -Tpng "$dot_file" -o "$PNG_DIR/$name.png"
+    echo "converted $name.png"
+done
