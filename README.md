@@ -4,32 +4,35 @@ A modular C++17 library for transforming Control Flow Graphs (CFG) into **Static
 
 ## 🚀 Features
 
-* **CFG Management**: Bidirectional graph structure with `START` (`0x000`) and `STOP` (`0xDED`) node markers.
+* **CFG Management**: Bidirectional graph structure with `START` (`0x000 = 0`) and `STOP` (`0xDED = 3565`) node markers.
 * **Dominance Analysis**: Calculation of Immediate Dominators ($IDom$) and construction of the Dominator Tree.
-* **Frontier Computation**: Efficient calculation of Dominance Frontiers ($DF$) for join-point analysis.
+* **Frontier Dominance Analysis**: Efficient calculation of Dominance Frontiers ($DF$) for join-point analysis.
 * **Loop Analysis**: Detection of natural loops, nesting structures, and categorization of `REDUCIBLE` vs `IRREDUCIBLE` control flow.
-* **$\phi$ Placement**: Automated insertion of minimal $\phi$-nodes based on variable definitions and dominance frontiers.
+* **$\phi$ Function Placement**: Automated insertion of minimal $\phi$-nodes based on variable definitions and dominance frontiers.
 * **Visualization**: Built-in support for exporting CFGs, Dominator Trees, and Loop Trees to Graphviz `.dot` format.
 
 ---
 
-## 🏗 Build Instructions
+## 🏗 Build and Usage Instructions
 
 This project requires **CMake 3.18+** and a **C++17** compatible compiler.
 
-1.  **Create a build directory**:
+1.  **Create a build directory and configure it**:
     ```bash
-    mkdir build && cd build
+    cmake -S . -B build 
     ```
-2.  **Configure the project**:
+2.  **Compile**:
     ```bash
-    cmake ..
+    cmake --build build
     ```
-3.  **Compile**:
+3.  **Execute**
     ```bash
-    cmake --build .
+    /build/src/loop_ssa
     ```
-
+4. **Convert resulting `.dot` into `.png` via script ``viz.sh``**
+    ```bash
+    bash viz.sh
+    ```
 ---
 
 ## 💻 Usage Example
