@@ -27,12 +27,23 @@ This project requires **CMake 3.18+** and a **C++17** compatible compiler.
     ```
 3.  **Execute**
     ```bash
-    /build/src/loop_ssa
+    ./build/src/loop_ssa
     ```
 4. **Convert resulting `.dot` into `.png` via script ``viz.sh``**
     ```bash
     bash viz.sh
     ```
+---
+
+## 🧪 Testing
+
+The project includes a suite of end-to-end (E2E) tests that verify the correctness of the SSA construction pipeline.
+
+* **To run them**:
+    ```bash
+    ./build/tests/E2E/e2e_tests
+    ```
+
 ---
 
 ## 💻 Usage Example
